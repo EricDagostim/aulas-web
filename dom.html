@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Document Object Model</title>
+</head>
+<body onload="addDia()">
+    <select id="dia"></select>
+
+    <script>
+
+        function addDia(){
+            
+            for(i = 1; i <= 31; i++){
+                
+                let option = document.createElement('option');
+                option.value = i;
+                option.innerHTML = i;
+                
+                document.getElementById("dia").append(option);
+
+            }
+
+        }
+    </script>
+</body>
+</html>

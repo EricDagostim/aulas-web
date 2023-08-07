@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Picker</title>
+</head>
+<body onload="gerarData()">
+
+    <form>
+        <fieldset>
+            <legend>Data</legend>
+            
+            <select id="dia"></select>
+    
+            <select id="mes">
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Junho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+            <select id="ano"></select>
+            
+    
+            <input type="button" value="calcular" onclick="calcular()">
+        </fieldset>
+    </form>
+    
+    <script>
+
+        function gerarData(){
+
+            for(i = 1; i <= 31; i++){
+                    
+                let optionDia = document.createElement('option');
+                optionDia.value = i;
+                optionDia.innerHTML = i;
+                
+                document.getElementById("dia").append(optionDia);
+    
+            }
+
+            for(j = 1970; j <= 2023; j++){
+                let optionAno = document.createElement('option');
+                optionAno.value = j;
+                optionAno.innerHTML = j;
+
+                document.getElementById("ano").append(optionAno);
+            }
+
+        }
+
+
+        function calcular(){
+            let dia = document.getElementById("dia").value;
+            let mes = document.getElementById("mes").value;
+            let ano = document.getElementById("ano").value;
+
+            alert(dia + "/" + mes + "/" + ano)
+        }
+    </script>
+</body>
+</html>

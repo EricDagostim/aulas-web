@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema</title>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+            <legend>Bilheteria</legend>
+            <label for="filme">Filme</label>
+            <input type="text" id="filme">
+    
+            <label for="quantidade">Quantidade ingressos</label>
+            <input type="number" id="quantidade">
+
+            <label for="valor">Valor ingressos</label>
+            <input type="number" id="valor">
+
+            <select id="tipo">
+                <option value="cheia" selected>Entrada Cheia</option>
+                <option value="meia">Meia Entrada</option>
+            </select>
+    
+            <input type="button" value="calcular" onclick="calcular()">
+        </fieldset>
+    </form>
+    
+</body>
+</html>
+    <script>
+        
+        function calcular(){
+            let filme = document.getElementById("filme").value;
+            let qtd = document.getElementById("quantidade").value;
+            let valor = document.getElementById("valor").value;
+            let tipo = document.getElementById("tipo").value;
+
+            let resultado = parseFloat(valor) * parseInt(qtd)
+
+            if(tipo == "meia"){
+                resultado = resultado / 2;
+            }
+            
+            alert("O filme " + filme + " teve " + qtd + " ingressos vendidos no valor de: " + valor + " totalizando em: " + resultado);
+        }
+
+    </script>
