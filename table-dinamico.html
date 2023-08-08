@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - Tabela Dinâmica</title>
+</head>
+<body>
+
+    <form>
+        <fieldset>
+            <legend>Adicionar Produto</legend>
+
+            <label for="produto">Produto</label>
+            <input type="text" name="produto" id="produto">
+
+            <label for="quantidade">Quantidade</label>
+            <input type="number" name="quantidade" id="quantidade">
+
+            <label for="preco">Preço</label>
+            <input type="text" name="preco" id="preco">
+
+            <input type="button" value="Adicionar" onclick="add()">
+        </fieldset>
+    </form>
+
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td id="total_quantidade"></td>
+                <td id="total_preco"></td>
+            </tr>
+        </tfoot>
+    </table>  
+
+<script>
+    var total_quantidade = 0;
+    var total_preco = 0;
+
+
+    function add(){
+        let tr = document.createElement('tr');
+        let td_produto = document.createElement('td');
+        let td_quantidade = document.createElement('td');
+        let td_preco = document.createElement('td');
+
+        let produto = document.getElementById('produto').value;
+        let quantidade = document.getElementById('quantidade').value;
+        let valor = document.getElementById('preco').value;
+
+        total_quantidade += parseFloat(quantidade);
+        total_preco += parseFloat(valor);
+
+        document.getElementById('total_quantidade').innerHTML = total_quantidade;
+        document.getElementById('total_preco').innerHTML = "R$ " + total_preco;
+
+        td_produto.innerHTML = produto;
+        td_quantidade.innerHTML = quantidade;
+        td_preco.innerHTML = "R$ " +  valor;
+
+        td_produto.align = 'left';
+        td_quantidade.align = 'left';
+        td_preco.align = 'left';
+
+        tr.append(td_produto)
+        tr.append(td_quantidade)
+        tr.append(td_preco)
+
+        document.getElementsByTagName('table')[0].append(tr);
+
+        document.getElementById('produto').value = "";
+        document.getElementById('quantidade').value = "";
+        document.getElementById('preco').value = "";
+
+    }
+</script>
+
+</body>
+</html>

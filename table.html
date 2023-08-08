@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03 - Tabelas</title>
+</head>
+<body>
+
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Caneta</td>
+                <td>500</td>
+                <td>0.15</td>
+            </tr>
+            <tr>
+                <td>Caderno</td>
+                <td>750</td>
+                <td>10.66</td>
+            </tr>
+            <tr>
+                <td>Lápis</td>
+                <td>310</td>
+                <td>0.08</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Total</td>
+                <td>1560</td>
+                <td>10.89</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <button onclick="add()">Adicionar</button>
+    
+
+
+<script>
+    function add(){
+        let tr = document.createElement('tr');
+        let td_produto = document.createElement('td');
+        let td_quantidade = document.createElement('td');
+        let td_preco = document.createElement('td');
+
+        td_produto.innerHTML = "régua";
+        td_quantidade.innerHTML = 110;
+        td_preco.innerHTML = 0.80;
+
+        td_produto.align = 'left';
+        td_quantidade.align = 'left';
+        td_preco.align = 'left';
+
+        tr.append(td_produto)
+        tr.append(td_quantidade)
+        tr.append(td_preco)
+
+        document.getElementsByTagName('table')[0].append(tr);
+
+    }
+</script>
+
+</body>
+</html>
