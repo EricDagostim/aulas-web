@@ -2,7 +2,6 @@
 
 function add(){
     //  Valores
-
     var game = document.getElementById("game").value;
     var estoqueOriginal = document.getElementById("estoqueOriginal").value;
     var valorGame = document.getElementById("valorGame").value;
